@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+        <head>
+            <title>hobby</title>
+            <style>
+                #kw {
+                    width: 400px;
+                    height: 300px;
+                    margin-top: 20px;
+                    position: relative;
+                    background-color: dimgrey;
+                    margin-left: 20px;
+                    border-radius: 50px;
+                    float: left;
+                }
+                img {
+                    padding-top: 30px;
+                    padding-left: 40px;
+                    width: 150px;
+                    height: 230px;
+				}
+                ul {
+                    display: inline-block;
+                    position: absolute;
+                    top: 1px;
+                    left: 180px;
+                    color: darksalmon;
+                }
+                li {
+                    list-style: none;
+                    padding-top: 20px;
+                }
+                .hb {
+                   position: relative;
+                   left: 20px;
+                   top: 1px;
+
+                }
+            </style>
+        </head>
+        <body>
+
+            {% for hero in info %}
+                <div id="kw">
+                    <img src="{% static hero.picture %}">
+                    <ul>
+
+                         <li>   <p>姓名：{{hero.name}}</p> </li>
+                         <li>   <p>定位：{{hero.locat}}</p>  </li>
+                         <li>   <p>属性：
+                                <p class="hb">{% for h,l in hero.attr.items %}
+                                    {{h}}:{{l}}&emsp;
+                                {% endfor %}</p>
+                            </p>
+                         </li>
+                    </ul>
+                </div>
+
+            {% endfor %}
+
+        </body>
+    </html>

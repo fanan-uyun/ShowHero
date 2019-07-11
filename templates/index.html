@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>测试页面</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+    <body>
+{#        <h1>我是{{ name }},测试成功。。。。。。。</h1>#}
+{#        <img src="/static/images/1.jpg">#}
+{#        <img src="{% static 'images/2.jpg' %}">#}
+          {% for img in images %}
+              <img src="{% static img %}">
+          {% endfor %}
+    </body>
+</html>
